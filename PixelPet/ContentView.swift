@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var petState = PetState()
+    @State private var showingPetSelector = false
 
     var body: some View {
         ZStack {
@@ -26,14 +27,36 @@ struct ContentView: View {
                         PixelPetView(petState: petState)
                             .frame(width: 120, height: 120)
 
-                        // Pet Name
-                        Text(petState.name)
-                            .font(.system(size: 18, weight: .medium, design: .rounded))
-                            .foregroundColor(.gray)
+                        // Pet Name with Icon
+                        HStack {
+                            Text(petState.petType.icon)
+                            Text(petState.name)
+                                .font(.system(size: 18, weight: .medium, design: .rounded))
+                                .foregroundColor(.gray)
+                        }
                     }
                     .padding()
                 }
                 .frame(width: 200, height: 200)
+                .onTapGesture {
+                    showingPetSelector = true
+                }
+
+                // Pet Selector Button
+                Button(action: { showingPetSelector = true }) {
+                    HStack {
+                        Image(systemName: "pawprint.fill")
+                        Text("キャラクター変更")
+                    }
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(.brown)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.brown, lineWidth: 2)
+                    )
+                }
 
                 // Status Bars
                 VStack(spacing: 15) {
@@ -61,6 +84,83 @@ struct ContentView: View {
                 Spacer()
             }
             .padding(.top, 50)
+        }
+        .sheet(isPresented: $showingPetSelector) {
+            PetSelectorView(petState: petState)
+        }
+    }
+}
+
+// MARK: - Pet Selector View
+struct PetSelectorView: View {
+    @ObservedObject var petState: PetState
+    @Environment(\.dismiss) var dismiss
+
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(PetType.allCases) { type in
+                        PetTypeCard(
+                            type: type,
+                            isSelected: petState.petType == type
+                        ) {
+                            petState.changePetType(type)
+                            dismiss()
+                        }
+                    }
+                }
+                .padding()
+            }
+            .navigationTitle("キャラクター選択")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("閉じる") {
+                        dismiss()
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Pet Type Card
+struct PetTypeCard: View {
+    let type: PetType
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 8) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(isSelected ? Color.brown.opacity(0.2) : Color.white)
+                        .shadow(radius: isSelected ? 5 : 2)
+
+                    StaticPixelPetView(petType: type, frame: 0)
+                        .frame(width: 60, height: 60)
+                }
+                .frame(width: 80, height: 80)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(isSelected ? Color.brown : Color.clear, lineWidth: 3)
+                )
+
+                Text(type.icon)
+                    .font(.system(size: 20))
+
+                Text(type.displayName)
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundColor(.gray)
+            }
         }
     }
 }
