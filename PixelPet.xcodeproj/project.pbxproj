@@ -14,7 +14,9 @@
 		675E8D69562C19AA404CCBD7 /* PixelPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */; };
 		6F4BCB218971C1B63A5A7D7C /* PixelPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755FA2F54AEECE98CB3B99D /* PixelPetApp.swift */; };
 		A09917C608F55C8AA162BC3E /* PetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C174E5BF0C015078BC658 /* PetState.swift */; };
+		BD0C72D88DE32FA8A545DB94 /* PetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD579C21FD5A65FF8E6ED01D /* PetCharacters.swift */; };
 		E9A215BE12ECA839D3C7F07C /* PetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C174E5BF0C015078BC658 /* PetState.swift */; };
+		FD393F20717D53B53751275E /* PetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD579C21FD5A65FF8E6ED01D /* PetCharacters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 		611115347F05B1D6D0BC9D04 /* PixelPetWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetWidget.swift; sourceTree = "<group>"; };
 		852C174E5BF0C015078BC658 /* PetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetState.swift; sourceTree = "<group>"; };
 		AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetView.swift; sourceTree = "<group>"; };
+		CD579C21FD5A65FF8E6ED01D /* PetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCharacters.swift; sourceTree = "<group>"; };
 		E7D1502D0B9013AF0F3EBEAD /* PixelPet.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PixelPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6363F4B0A9E9CE49B209B50 /* PixelPetWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PixelPetWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,6 +65,7 @@
 		8D277E7E7C0ADD307B939D16 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CD579C21FD5A65FF8E6ED01D /* PetCharacters.swift */,
 				852C174E5BF0C015078BC658 /* PetState.swift */,
 				AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */,
 			);
@@ -168,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				185D0DE3DD05DFB158FA364A /* ContentView.swift in Sources */,
+				BD0C72D88DE32FA8A545DB94 /* PetCharacters.swift in Sources */,
 				A09917C608F55C8AA162BC3E /* PetState.swift in Sources */,
 				6F4BCB218971C1B63A5A7D7C /* PixelPetApp.swift in Sources */,
 				014D92224F43CBC3C8436804 /* PixelPetView.swift in Sources */,
@@ -178,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD393F20717D53B53751275E /* PetCharacters.swift in Sources */,
 				E9A215BE12ECA839D3C7F07C /* PetState.swift in Sources */,
 				675E8D69562C19AA404CCBD7 /* PixelPetView.swift in Sources */,
 				0D99268A06CB45DD782D8504 /* PixelPetWidget.swift in Sources */,

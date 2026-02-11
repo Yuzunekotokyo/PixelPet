@@ -4,6 +4,7 @@ import Combine
 // MARK: - Pet State (Shared between App and Widget)
 class PetState: ObservableObject {
     @Published var name: String = "Pixel"
+    @Published var petType: PetType = .dog
     @Published var hunger: Double = 0.7
     @Published var happiness: Double = 0.8
     @Published var energy: Double = 0.6
@@ -13,9 +14,18 @@ class PetState: ObservableObject {
     private var timer: Timer?
     private let frameCount = 4
 
-    init() {
+    init(petType: PetType = .dog) {
+        self.petType = petType
+        self.name = petType.displayName
         startAnimation()
         startDecay()
+    }
+
+    // MARK: - Change Pet Type
+    func changePetType(_ type: PetType) {
+        petType = type
+        name = type.displayName
+        currentFrame = 0
     }
 
     // MARK: - Animation
@@ -66,17 +76,21 @@ struct PetDataManager {
     static func savePetState(_ state: PetState) {
         guard let userDefaults = UserDefaults(suiteName: appGroupID) else { return }
         userDefaults.set(state.name, forKey: "petName")
+        userDefaults.set(state.petType.rawValue, forKey: "petType")
         userDefaults.set(state.hunger, forKey: "hunger")
         userDefaults.set(state.happiness, forKey: "happiness")
         userDefaults.set(state.energy, forKey: "energy")
     }
 
-    static func loadPetState() -> (name: String, hunger: Double, happiness: Double, energy: Double) {
+    static func loadPetState() -> (name: String, petType: PetType, hunger: Double, happiness: Double, energy: Double) {
         guard let userDefaults = UserDefaults(suiteName: appGroupID) else {
-            return ("Pixel", 0.7, 0.8, 0.6)
+            return ("Pixel", .dog, 0.7, 0.8, 0.6)
         }
+        let typeString = userDefaults.string(forKey: "petType") ?? "dog"
+        let petType = PetType(rawValue: typeString) ?? .dog
         return (
             userDefaults.string(forKey: "petName") ?? "Pixel",
+            petType,
             userDefaults.double(forKey: "hunger"),
             userDefaults.double(forKey: "happiness"),
             userDefaults.double(forKey: "energy")

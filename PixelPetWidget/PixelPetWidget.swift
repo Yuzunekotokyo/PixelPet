@@ -4,11 +4,11 @@ import SwiftUI
 // MARK: - Timeline Provider
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> PetEntry {
-        PetEntry(date: Date(), frame: 0, hunger: 0.7, happiness: 0.8, energy: 0.6)
+        PetEntry(date: Date(), frame: 0, petType: .dog, hunger: 0.7, happiness: 0.8, energy: 0.6)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (PetEntry) -> Void) {
-        let entry = PetEntry(date: Date(), frame: 0, hunger: 0.7, happiness: 0.8, energy: 0.6)
+        let entry = PetEntry(date: Date(), frame: 0, petType: .dog, hunger: 0.7, happiness: 0.8, energy: 0.6)
         completion(entry)
     }
 
@@ -16,16 +16,20 @@ struct Provider: TimelineProvider {
         var entries: [PetEntry] = []
         let currentDate = Date()
 
-        // Generate entries for animation (every 0.5 seconds for 10 seconds, then refresh)
+        // Load saved pet type
+        let savedData = PetDataManager.loadPetState()
+
+        // Generate entries for animation
         for i in 0..<20 {
             let entryDate = Calendar.current.date(byAdding: .second, value: i, to: currentDate)!
             let frame = i % 4
             let entry = PetEntry(
                 date: entryDate,
                 frame: frame,
-                hunger: 0.7,
-                happiness: 0.8,
-                energy: 0.6
+                petType: savedData.petType,
+                hunger: savedData.hunger > 0 ? savedData.hunger : 0.7,
+                happiness: savedData.happiness > 0 ? savedData.happiness : 0.8,
+                energy: savedData.energy > 0 ? savedData.energy : 0.6
             )
             entries.append(entry)
         }
@@ -39,6 +43,7 @@ struct Provider: TimelineProvider {
 struct PetEntry: TimelineEntry {
     let date: Date
     let frame: Int
+    let petType: PetType
     let hunger: Double
     let happiness: Double
     let energy: Double
@@ -71,12 +76,16 @@ struct SmallWidgetView: View {
                 .fill(Color(red: 0.95, green: 0.95, blue: 0.92))
 
             VStack(spacing: 4) {
-                WidgetPixelPetView(frame: entry.frame)
+                StaticPixelPetView(petType: entry.petType, frame: entry.frame)
                     .frame(width: 80, height: 80)
 
-                Text("Pixel")
-                    .font(.system(size: 12, weight: .medium, design: .rounded))
-                    .foregroundColor(.brown)
+                HStack(spacing: 4) {
+                    Text(entry.petType.icon)
+                        .font(.system(size: 12))
+                    Text(entry.petType.displayName)
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .foregroundColor(.brown)
+                }
             }
         }
     }
@@ -92,13 +101,16 @@ struct MediumWidgetView: View {
                 .fill(Color(red: 0.95, green: 0.95, blue: 0.92))
 
             HStack(spacing: 20) {
-                WidgetPixelPetView(frame: entry.frame)
+                StaticPixelPetView(petType: entry.petType, frame: entry.frame)
                     .frame(width: 100, height: 100)
 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Pixel")
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundColor(.brown)
+                    HStack {
+                        Text(entry.petType.icon)
+                        Text(entry.petType.displayName)
+                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .foregroundColor(.brown)
+                    }
 
                     WidgetStatusBar(label: "Hunger", value: entry.hunger, color: .orange)
                     WidgetStatusBar(label: "Happy", value: entry.happiness, color: .pink)
@@ -137,128 +149,6 @@ struct WidgetStatusBar: View {
     }
 }
 
-// MARK: - Widget Pixel Pet View
-struct WidgetPixelPetView: View {
-    let frame: Int
-
-    let bodyColor = Color(red: 0.6, green: 0.4, blue: 0.2)
-    let lightColor = Color(red: 0.8, green: 0.6, blue: 0.4)
-    let eyeColor = Color.black
-    let noseColor = Color(red: 0.3, green: 0.2, blue: 0.1)
-
-    var body: some View {
-        GeometryReader { geometry in
-            let pixelSize = geometry.size.width / 16
-
-            Canvas { context, size in
-                let sprite = getSprite(for: frame)
-                for (rowIndex, row) in sprite.enumerated() {
-                    for (colIndex, pixel) in row.enumerated() {
-                        if let color = colorForPixel(pixel) {
-                            let rect = CGRect(
-                                x: CGFloat(colIndex) * pixelSize,
-                                y: CGFloat(rowIndex) * pixelSize,
-                                width: pixelSize + 0.5,
-                                height: pixelSize + 0.5
-                            )
-                            context.fill(Path(rect), with: .color(color))
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    func getSprite(for frame: Int) -> [[Character]] {
-        let sprites: [[[Character]]] = [
-            [
-                "................".map{$0},
-                "................".map{$0},
-                "...BB....BB.....".map{$0},
-                "..BBBB..BBBB....".map{$0},
-                "..BLLLBBBLLL....".map{$0},
-                "..LLLLLLLLLL....".map{$0},
-                "..LEWLLEWLLL....".map{$0},
-                "..LLLLLLLLL.....".map{$0},
-                "...LLLNLLL......".map{$0},
-                "....LLLLL.......".map{$0},
-                "...BBBBBBB......".map{$0},
-                "..BBLLLLLBB.....".map{$0},
-                "..BLLLLLLLLB....".map{$0},
-                "..BLL..LLLLB....".map{$0},
-                "...BB...BB......".map{$0},
-                "................".map{$0},
-            ],
-            [
-                "................".map{$0},
-                "................".map{$0},
-                "...BB....BB.....".map{$0},
-                "..BBBB..BBBB....".map{$0},
-                "..BLLLBBBLLL....".map{$0},
-                "..LLLLLLLLLL....".map{$0},
-                "..LEELLEELLL....".map{$0},
-                "..LLLLLLLLL.....".map{$0},
-                "...LLLNLLL......".map{$0},
-                "....LLLLL.......".map{$0},
-                "...BBBBBBB......".map{$0},
-                "..BBLLLLLBB.....".map{$0},
-                "..BLLLLLLLLB....".map{$0},
-                "..BLL..LLLLB....".map{$0},
-                "...BB...BB......".map{$0},
-                "................".map{$0},
-            ],
-            [
-                "................".map{$0},
-                "................".map{$0},
-                "...BB....BB.....".map{$0},
-                "..BBBB..BBBB....".map{$0},
-                "..BLLLBBBLLL....".map{$0},
-                "..LLLLLLLLLL....".map{$0},
-                "..LEWLLEWLLL....".map{$0},
-                "..LLLLLLLLL.....".map{$0},
-                "...LLLNLLL......".map{$0},
-                "....LLLLL.......".map{$0},
-                "...BBBBBBB......".map{$0},
-                "..BBLLLLLBBB....".map{$0},
-                "..BLLLLLLLLB....".map{$0},
-                "..BLL..LLLLB....".map{$0},
-                "...BB...BB......".map{$0},
-                "................".map{$0},
-            ],
-            [
-                "................".map{$0},
-                "................".map{$0},
-                "...BB....BB.....".map{$0},
-                "..BBBB..BBBB....".map{$0},
-                "..BLLLBBBLLL....".map{$0},
-                "..LLLLLLLLLL....".map{$0},
-                "..LEWLLEWLLL....".map{$0},
-                "..LLLLLLLLL.....".map{$0},
-                "...LLLNLLL......".map{$0},
-                "....LLLLL.......".map{$0},
-                "...BBBBBBB......".map{$0},
-                ".BBBLLLLLBB.....".map{$0},
-                "..BLLLLLLLLB....".map{$0},
-                "..BLL..LLLLB....".map{$0},
-                "...BB...BB......".map{$0},
-                "................".map{$0},
-            ],
-        ]
-        return sprites[frame % sprites.count]
-    }
-
-    func colorForPixel(_ char: Character) -> Color? {
-        switch char {
-        case "B": return bodyColor
-        case "L": return lightColor
-        case "E": return eyeColor
-        case "N": return noseColor
-        case "W": return .white
-        default: return nil
-        }
-    }
-}
-
 // MARK: - Widget Configuration
 struct PixelPetWidget: Widget {
     let kind: String = "PixelPetWidget"
@@ -278,6 +168,7 @@ struct PixelPetWidget: Widget {
 #Preview(as: .systemSmall) {
     PixelPetWidget()
 } timeline: {
-    PetEntry(date: .now, frame: 0, hunger: 0.7, happiness: 0.8, energy: 0.6)
-    PetEntry(date: .now, frame: 1, hunger: 0.7, happiness: 0.8, energy: 0.6)
+    PetEntry(date: .now, frame: 0, petType: .dog, hunger: 0.7, happiness: 0.8, energy: 0.6)
+    PetEntry(date: .now, frame: 1, petType: .demon, hunger: 0.7, happiness: 0.8, energy: 0.6)
+    PetEntry(date: .now, frame: 2, petType: .dragon, hunger: 0.7, happiness: 0.8, energy: 0.6)
 }
