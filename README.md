@@ -2,51 +2,54 @@
 
 かわいいドット絵のペットをホーム画面ウィジェットで飼育できるiOSアプリ
 
+## 必要環境
+
+- macOS
+- Xcode 15+
+- iOS 17+
+- [XcodeGen](https://github.com/yonaskolb/XcodeGen)（オプション）
+
 ## セットアップ手順
 
-### 1. Xcodeでプロジェクトを作成
+### 方法1: XcodeGenを使用（推奨）
 
-1. **Xcodeを開く**
-2. **「Create New Project」をクリック**
-3. **「iOS」→「App」を選択 → Next**
-4. 以下を入力:
-   - Product Name: `PixelPet`
-   - Organization Identifier: `com.yourname`
-   - Interface: `SwiftUI`
-   - Language: `Swift`
-5. **保存先を `/Users/kei/PixelPet` に設定**（既存ファイルを上書き）
-6. **Create**
+```bash
+# XcodeGenがインストールされていない場合
+brew install xcodegen
 
-### 2. ソースファイルをプロジェクトに追加
+# プロジェクト生成
+cd /path/to/PixelPet
+xcodegen generate
 
-作成したプロジェクトに以下のファイルをドラッグ＆ドロップ:
+# Xcodeで開く
+open PixelPet.xcodeproj
+```
 
-**メインアプリ用:**
-- `PixelPet/PixelPetApp.swift`（既存のものを置き換え）
-- `PixelPet/ContentView.swift`（既存のものを置き換え）
+### 方法2: 既存のXcodeプロジェクトを使用
 
-**共有ファイル（新規追加）:**
-- `Shared/PetState.swift`
-- `Shared/PixelPetView.swift`
+```bash
+open PixelPet.xcodeproj
+```
 
-### 3. Widget Extension を追加
-
-1. **File → New → Target**
-2. **「Widget Extension」を選択 → Next**
-3. **Product Name**: `PixelPetWidget`
-4. **「Include Configuration App Intent」のチェックを外す**
-5. **Finish → 「Activate」をクリック**
-
-### 4. ウィジェットファイルを置き換え
-
-生成されたウィジェットファイルを以下で置き換え:
-- `PixelPetWidget/PixelPetWidget.swift`
-- `PixelPetWidget/PixelPetWidgetBundle.swift`
-
-### 5. ビルド＆実行
+### ビルド＆実行
 
 1. **シミュレーターまたは実機を選択**
 2. **▶️ Run ボタンをクリック**
+
+## 開発フロー
+
+```bash
+# 機能ブランチを作成
+git checkout -b feature/new-feature
+
+# 変更をコミット
+git add .
+git commit -m "Add new feature"
+
+# プッシュしてPR作成
+git push -u origin feature/new-feature
+gh pr create --title "Add new feature" --body "Description"
+```
 
 ## 機能
 
@@ -78,3 +81,15 @@ PixelPet/
 
 ### 色の変更
 `bodyColor`, `lightColor` などの定数を変更
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+MIT License
