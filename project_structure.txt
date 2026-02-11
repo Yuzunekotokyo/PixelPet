@@ -1,0 +1,11 @@
+PixelPet/
+├── PixelPet.xcodeproj
+├── PixelPet/
+│   ├── PixelPetApp.swift
+│   ├── ContentView.swift
+│   ├── Assets.xcassets/
+│   └── Info.plist
+└── PixelPetWidget/
+    ├── PixelPetWidget.swift
+    ├── PixelPetWidgetBundle.swift
+    └── Assets.xcassets/

@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		014D92224F43CBC3C8436804 /* PixelPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */; };
+		04B302838C77C981545443B1 /* PixelPetWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6F37299950D225DF5A118 /* PixelPetWidgetBundle.swift */; };
+		0D99268A06CB45DD782D8504 /* PixelPetWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611115347F05B1D6D0BC9D04 /* PixelPetWidget.swift */; };
+		185D0DE3DD05DFB158FA364A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63DBF98E3A3AC090914BDF /* ContentView.swift */; };
+		675E8D69562C19AA404CCBD7 /* PixelPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */; };
+		6F4BCB218971C1B63A5A7D7C /* PixelPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755FA2F54AEECE98CB3B99D /* PixelPetApp.swift */; };
+		A09917C608F55C8AA162BC3E /* PetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C174E5BF0C015078BC658 /* PetState.swift */; };
+		E9A215BE12ECA839D3C7F07C /* PetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C174E5BF0C015078BC658 /* PetState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		340D9C3C1A64CDE783BBB4FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B31ED9128B1C2E67B6F0EB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AC68A248F1E5AE8C7AE51B4;
+			remoteInfo = PixelPet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0755FA2F54AEECE98CB3B99D /* PixelPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetApp.swift; sourceTree = "<group>"; };
+		201D1C00053D404AB4B4F84D /* PixelPetWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PixelPetWidget.entitlements; sourceTree = "<group>"; };
+		4D63DBF98E3A3AC090914BDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		60F6F37299950D225DF5A118 /* PixelPetWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetWidgetBundle.swift; sourceTree = "<group>"; };
+		611115347F05B1D6D0BC9D04 /* PixelPetWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetWidget.swift; sourceTree = "<group>"; };
+		852C174E5BF0C015078BC658 /* PetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetState.swift; sourceTree = "<group>"; };
+		AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetView.swift; sourceTree = "<group>"; };
+		E7D1502D0B9013AF0F3EBEAD /* PixelPet.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PixelPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6363F4B0A9E9CE49B209B50 /* PixelPetWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PixelPetWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		420C970E2363D76CAFB02CB6 /* PixelPet */ = {
+			isa = PBXGroup;
+			children = (
+				4D63DBF98E3A3AC090914BDF /* ContentView.swift */,
+				0755FA2F54AEECE98CB3B99D /* PixelPetApp.swift */,
+			);
+			path = PixelPet;
+			sourceTree = "<group>";
+		};
+		810074A3BD9714FAADEF9C53 /* PixelPetWidget */ = {
+			isa = PBXGroup;
+			children = (
+				201D1C00053D404AB4B4F84D /* PixelPetWidget.entitlements */,
+				611115347F05B1D6D0BC9D04 /* PixelPetWidget.swift */,
+				60F6F37299950D225DF5A118 /* PixelPetWidgetBundle.swift */,
+			);
+			path = PixelPetWidget;
+			sourceTree = "<group>";
+		};
+		8D277E7E7C0ADD307B939D16 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				852C174E5BF0C015078BC658 /* PetState.swift */,
+				AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D8C11F9BE2E960BDF7840E55 = {
+			isa = PBXGroup;
+			children = (
+				420C970E2363D76CAFB02CB6 /* PixelPet */,
+				810074A3BD9714FAADEF9C53 /* PixelPetWidget */,
+				8D277E7E7C0ADD307B939D16 /* Shared */,
+				EE742F86F32D647EA4E2355F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE742F86F32D647EA4E2355F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1502D0B9013AF0F3EBEAD /* PixelPet.app */,
+				F6363F4B0A9E9CE49B209B50 /* PixelPetWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		555C95104747EB0E1FA6908D /* PixelPetWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 646257A96282EB2F65F3223E /* Build configuration list for PBXNativeTarget "PixelPetWidget" */;
+			buildPhases = (
+				EC097C22F1B08ED6FCA57830 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FBF76EEADD4968D2B57983E /* PBXTargetDependency */,
+			);
+			name = PixelPetWidget;
+			packageProductDependencies = (
+			);
+			productName = PixelPetWidget;
+			productReference = F6363F4B0A9E9CE49B209B50 /* PixelPetWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8AC68A248F1E5AE8C7AE51B4 /* PixelPet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C4C5D1D87D814E45B822FDF /* Build configuration list for PBXNativeTarget "PixelPet" */;
+			buildPhases = (
+				9E0E637B0625B2A75BDFB6AA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PixelPet;
+			packageProductDependencies = (
+			);
+			productName = PixelPet;
+			productReference = E7D1502D0B9013AF0F3EBEAD /* PixelPet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B31ED9128B1C2E67B6F0EB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					555C95104747EB0E1FA6908D = {
+						DevelopmentTeam = "";
+					};
+					8AC68A248F1E5AE8C7AE51B4 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 72137607479AA84E5EE673BF /* Build configuration list for PBXProject "PixelPet" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D8C11F9BE2E960BDF7840E55;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8AC68A248F1E5AE8C7AE51B4 /* PixelPet */,
+				555C95104747EB0E1FA6908D /* PixelPetWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E0E637B0625B2A75BDFB6AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				185D0DE3DD05DFB158FA364A /* ContentView.swift in Sources */,
+				A09917C608F55C8AA162BC3E /* PetState.swift in Sources */,
+				6F4BCB218971C1B63A5A7D7C /* PixelPetApp.swift in Sources */,
+				014D92224F43CBC3C8436804 /* PixelPetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC097C22F1B08ED6FCA57830 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9A215BE12ECA839D3C7F07C /* PetState.swift in Sources */,
+				675E8D69562C19AA404CCBD7 /* PixelPetView.swift in Sources */,
+				0D99268A06CB45DD782D8504 /* PixelPetWidget.swift in Sources */,
+				04B302838C77C981545443B1 /* PixelPetWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FBF76EEADD4968D2B57983E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AC68A248F1E5AE8C7AE51B4 /* PixelPet */;
+			targetProxy = 340D9C3C1A64CDE783BBB4FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		39774E070AB939B95D101B4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pixelpet.PixelPet;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53B8AF6CDEE237C075AC2789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PixelPetWidget/PixelPetWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_CFBundleDisplayName = PixelPetWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pixelpet.PixelPetWidget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9AB355662C6A83B54106A59A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		C13489FDA8C3A5C8D38CC593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		C44FD29E449CD373AAC036CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pixelpet.PixelPet;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1170C6263F84A4CE35A6AE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PixelPetWidget/PixelPetWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_CFBundleDisplayName = PixelPetWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pixelpet.PixelPetWidget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		646257A96282EB2F65F3223E /* Build configuration list for PBXNativeTarget "PixelPetWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B8AF6CDEE237C075AC2789 /* Debug */,
+				E1170C6263F84A4CE35A6AE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		72137607479AA84E5EE673BF /* Build configuration list for PBXProject "PixelPet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AB355662C6A83B54106A59A /* Debug */,
+				C13489FDA8C3A5C8D38CC593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8C4C5D1D87D814E45B822FDF /* Build configuration list for PBXNativeTarget "PixelPet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C44FD29E449CD373AAC036CC /* Debug */,
+				39774E070AB939B95D101B4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B31ED9128B1C2E67B6F0EB4 /* Project object */;
+}
