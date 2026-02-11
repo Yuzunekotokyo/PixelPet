@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		014D92224F43CBC3C8436804 /* PixelPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */; };
 		04B302838C77C981545443B1 /* PixelPetWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6F37299950D225DF5A118 /* PixelPetWidgetBundle.swift */; };
+		06D1C35071FD3154C4E94689 /* PetActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB52F9E662882128ED81D77 /* PetActivityAttributes.swift */; };
 		0D99268A06CB45DD782D8504 /* PixelPetWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611115347F05B1D6D0BC9D04 /* PixelPetWidget.swift */; };
 		185D0DE3DD05DFB158FA364A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63DBF98E3A3AC090914BDF /* ContentView.swift */; };
+		346BCA5C1D325EAFB43BD754 /* PetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA32001AA6E38A854A3D7D /* PetLiveActivity.swift */; };
 		675E8D69562C19AA404CCBD7 /* PixelPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */; };
 		6F4BCB218971C1B63A5A7D7C /* PixelPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755FA2F54AEECE98CB3B99D /* PixelPetApp.swift */; };
 		A09917C608F55C8AA162BC3E /* PetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C174E5BF0C015078BC658 /* PetState.swift */; };
 		BD0C72D88DE32FA8A545DB94 /* PetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD579C21FD5A65FF8E6ED01D /* PetCharacters.swift */; };
+		C2907C295903F2314CF7B578 /* PetActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB52F9E662882128ED81D77 /* PetActivityAttributes.swift */; };
 		E9A215BE12ECA839D3C7F07C /* PetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C174E5BF0C015078BC658 /* PetState.swift */; };
 		FD393F20717D53B53751275E /* PetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD579C21FD5A65FF8E6ED01D /* PetCharacters.swift */; };
 /* End PBXBuildFile section */
@@ -32,9 +35,11 @@
 /* Begin PBXFileReference section */
 		0755FA2F54AEECE98CB3B99D /* PixelPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetApp.swift; sourceTree = "<group>"; };
 		201D1C00053D404AB4B4F84D /* PixelPetWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PixelPetWidget.entitlements; sourceTree = "<group>"; };
+		32DA32001AA6E38A854A3D7D /* PetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLiveActivity.swift; sourceTree = "<group>"; };
 		4D63DBF98E3A3AC090914BDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		60F6F37299950D225DF5A118 /* PixelPetWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetWidgetBundle.swift; sourceTree = "<group>"; };
 		611115347F05B1D6D0BC9D04 /* PixelPetWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetWidget.swift; sourceTree = "<group>"; };
+		6BB52F9E662882128ED81D77 /* PetActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActivityAttributes.swift; sourceTree = "<group>"; };
 		852C174E5BF0C015078BC658 /* PetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetState.swift; sourceTree = "<group>"; };
 		AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPetView.swift; sourceTree = "<group>"; };
 		CD579C21FD5A65FF8E6ED01D /* PetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCharacters.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		810074A3BD9714FAADEF9C53 /* PixelPetWidget */ = {
 			isa = PBXGroup;
 			children = (
+				32DA32001AA6E38A854A3D7D /* PetLiveActivity.swift */,
 				201D1C00053D404AB4B4F84D /* PixelPetWidget.entitlements */,
 				611115347F05B1D6D0BC9D04 /* PixelPetWidget.swift */,
 				60F6F37299950D225DF5A118 /* PixelPetWidgetBundle.swift */,
@@ -65,6 +71,7 @@
 		8D277E7E7C0ADD307B939D16 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				6BB52F9E662882128ED81D77 /* PetActivityAttributes.swift */,
 				CD579C21FD5A65FF8E6ED01D /* PetCharacters.swift */,
 				852C174E5BF0C015078BC658 /* PetState.swift */,
 				AA36F09D3B7E4E6878134ED1 /* PixelPetView.swift */,
@@ -172,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				185D0DE3DD05DFB158FA364A /* ContentView.swift in Sources */,
+				C2907C295903F2314CF7B578 /* PetActivityAttributes.swift in Sources */,
 				BD0C72D88DE32FA8A545DB94 /* PetCharacters.swift in Sources */,
 				A09917C608F55C8AA162BC3E /* PetState.swift in Sources */,
 				6F4BCB218971C1B63A5A7D7C /* PixelPetApp.swift in Sources */,
@@ -183,7 +191,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D1C35071FD3154C4E94689 /* PetActivityAttributes.swift in Sources */,
 				FD393F20717D53B53751275E /* PetCharacters.swift in Sources */,
+				346BCA5C1D325EAFB43BD754 /* PetLiveActivity.swift in Sources */,
 				E9A215BE12ECA839D3C7F07C /* PetState.swift in Sources */,
 				675E8D69562C19AA404CCBD7 /* PixelPetView.swift in Sources */,
 				0D99268A06CB45DD782D8504 /* PixelPetWidget.swift in Sources */,
@@ -210,6 +220,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -235,6 +246,7 @@
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_CFBundleDisplayName = PixelPetWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,6 +388,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -401,6 +414,7 @@
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_CFBundleDisplayName = PixelPetWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

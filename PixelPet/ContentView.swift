@@ -1,7 +1,9 @@
 import SwiftUI
+import ActivityKit
 
 struct ContentView: View {
     @StateObject private var petState = PetState()
+    @StateObject private var activityManager = PetActivityManager.shared
     @State private var showingPetSelector = false
 
     var body: some View {
@@ -80,6 +82,13 @@ struct ContentView: View {
                         petState.sleep()
                     }
                 }
+
+                // Dynamic Island Toggle
+                DynamicIslandToggleButton(
+                    isRunning: activityManager.isActivityRunning,
+                    petState: petState
+                )
+                .padding(.top, 10)
 
                 Spacer()
             }
@@ -214,6 +223,46 @@ struct ActionButton: View {
                     .fill(Color.brown)
             )
             .shadow(radius: 3)
+        }
+    }
+}
+
+// MARK: - Dynamic Island Toggle Button
+struct DynamicIslandToggleButton: View {
+    let isRunning: Bool
+    let petState: PetState
+
+    var body: some View {
+        Button(action: toggleActivity) {
+            HStack(spacing: 8) {
+                Image(systemName: isRunning ? "stop.fill" : "play.fill")
+                    .font(.system(size: 16))
+                Text(isRunning ? "Dynamic Island停止" : "Dynamic Islandに表示")
+                    .font(.system(size: 14, weight: .medium))
+            }
+            .foregroundColor(.white)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 12)
+            .background(
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(isRunning ? Color.red : Color.green)
+            )
+            .shadow(radius: 3)
+        }
+    }
+
+    private func toggleActivity() {
+        if isRunning {
+            Task {
+                await PetActivityManager.shared.endActivity()
+            }
+        } else {
+            PetActivityManager.shared.startActivity(
+                petType: petState.petType,
+                hunger: petState.hunger,
+                happiness: petState.happiness,
+                energy: petState.energy
+            )
         }
     }
 }
